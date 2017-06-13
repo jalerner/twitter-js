@@ -42,7 +42,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 // Log data
-console.log(data);
+//console.log(data);
 
 const fakeLasts = ['Hashington', 'Stackson', 'McQueue', 'OLogn', 'Ternary', 'Claujure', 'Dunderproto', 'Binder', 'Docsreader', 'Ecma'];
 let retList = []
@@ -52,5 +52,5 @@ let foundData = _.find(fakeLasts, (o) => {
 let filterData = _.filter(fakeLasts, (o) => {
     return o.includes('s');
 })
-console.log(retList, filterData);
+//console.log(retList, filterData);
 
