@@ -10,15 +10,33 @@
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
       <b>Your Name</b><br>
       100 followers
+      {% if showForm %}
+        <form action="/tweets" method="POST">
+          <div class="form-group">
+            <label for="name_field">Name:</label>
+            {% if showName %}
+              <input class="form-control" name="name" type="text" id="name_field" value="{{tweets[0].name}}"/>
+            {% else %}
+            <input class="form-control" name="name" type="text" id="name_field" value=""/>
+            {% endif %}
+            <label for="text_field">Text:</label>
+            <input class="form-control" name="text" type="text" id="text_field"/>
+
+            <button type="submit" class = "btn btn-primary">Submit</button>
+          </div>
+        </form>
+      {% endif %}
     </div>
     <div class="col-sm-9">
       <!-- display tweets here -->
       {% for tweet in tweets %}
-      <div class="tweetbox">
+      <div id="tweetContainer" class="tweetbox">
         <img>
-        <div>{{tweet.name}}</div>
-        <div>{{tweet.content}}</div>
+        <!--<li><a href="/users/{{tweet.name}}">{{tweet.name}}</a> - {{tweet.content}}</li>-->
+        <div><a href="/users/{{tweet.name}}">{{tweet.name}}</a></div>
+        <div>{{tweet.id}}: {{tweet.content}}</div>
       </div>
+      
       {% endfor %}
       
     </div>

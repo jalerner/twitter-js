@@ -4,7 +4,7 @@ const _ = require('lodash');
 let data = [];
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+  data.push({ name: name, content: content, id: data.length+1});
 }
 
 // Recursively calls clone on every value

@@ -41,6 +41,15 @@ code {
   font-size: 80%;
 }
 
+.tweetbox:before,
+.tweetbox:after {
+  content: "";
+  display: table;
+}
+.tweetbox:after {
+  clear: both;
+}
+
 .tweetbox {
   padding: 7px;
 }
@@ -52,9 +61,18 @@ code {
   margin: 10px;
   content:url("http://lorempixel.com/48/48");
 }
+
 .content {
   margin-left: 60px;
 }
 .content .by {
   font-weight: bold;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+form {
+  margin-top: 15px;
 }
